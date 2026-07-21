@@ -512,10 +512,10 @@ color: #087c9e;
 .faq p:not(.eyebrow) {
 color: var(--muted);
 }
-.image-stack {
+/* .image-stack {
 position: relative;
 height: 440px;
-}
+} */
 .main-img {
 width: 78%;
 height: 390px;
@@ -1046,23 +1046,49 @@ display: flex;
 justify-content: space-between;
 font-size: 10px;
 }
-.float-whatsapp {
+.floating-actions {
 position: fixed;
 z-index: 8;
 bottom: 18px;
 right: 18px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.float-whatsapp,
+.float-instagram {
+display: inline-flex;
+align-items: center;
+justify-content: center;
 color: white;
 text-decoration: none;
-background: #23b968;
-border-radius: 99px;
-padding: 11px 15px;
-box-shadow: 0 8px 18px #06572f55;
+border-radius: 50px;
+box-shadow: 0 8px 18px rgba(6, 87, 47, 0.35);
 font-size: 16px;
+transition: 0.3s ease;
+}
+.float-whatsapp {
+background: #23b968;
+padding: 11px 15px;
 }
 .float-whatsapp span {
 font-size: 11px;
 font-weight: bold;
 margin-left: 5px;
+}
+.float-instagram {
+background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+padding: 11px 15px;
+}
+.float-whatsapp i,
+.float-instagram i {
+font-size: 22px;
+}
+.float-whatsapp:hover {
+background: #1ebe5d;
+}
+.float-instagram:hover {
+box-shadow: 0 8px 20px rgba(220, 39, 67, 0.35);
 }
 @keyframes rise {
 to {
@@ -1176,9 +1202,9 @@ padding: 20px 0;
 grid-template-columns: 1fr;
 gap: 35px;
 }
-.image-stack {
+/* .image-stack {
 height: 360px;
-}
+} */
 .main-img {
 height: 320px;
 width: 82%;
@@ -1289,4 +1315,193 @@ border-radius:16px;
 height:280px;
 border-radius:12px;
 }
+}
+.float-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.float-whatsapp i {
+    font-size: 22px;
+}
+
+.float-whatsapp:hover {
+    background: #1ebe5d;
+}
+
+.float-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.float-instagram i {
+    font-size: 22px;
+}
+
+.float-instagram:hover {
+    
+    box-shadow: 0 8px 20px rgba(220, 39, 67, 0.35);
+}
+
+
+.category-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.category-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    height: 214px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.4s;
+}
+
+.category-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.category-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.2));
+}
+
+.category-content{
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    z-index: 2;
+}
+
+.category-content span{
+    display: inline-block;
+    background: #00b7ff;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.category-content h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.category-content p{
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.category-card:hover img{
+    transform: scale(1.08);
+}
+
+/* Tablet */
+@media (max-width: 992px){
+    .category-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px){
+    .category-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.about-image{
+    position: relative;
+    height: 440px;
+    width: 100%;
+}
+
+.main-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.18);
+    display: block;
+}
+
+.experience-card{
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    background: rgba(10,108,241,.95);
+    color: #fff;
+    padding: 18px 24px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    max-width: 220px;
+}
+
+.experience-card span{
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: .9;
+}
+
+.experience-card h2{
+    margin: 6px 0;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.experience-card p{
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: .95;
+}
+
+@media (max-width:768px){
+    .about-image{
+        height: 360px;
+    }
+
+    .experience-card{
+        left: 15px;
+        bottom: 15px;
+        padding: 15px 18px;
+        max-width: 180px;
+    }
+
+    .experience-card h2{
+        font-size: 34px;
+    }
+
+    .experience-card p{
+        font-size: 13px;
+    }
 }
